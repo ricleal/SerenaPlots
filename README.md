@@ -380,3 +380,190 @@ Other
 - `.align-active`
 - `table.info_table`
 - `.info_table th`, `.info_table td`
+
+2d_plots
+========
+
+html files
+----------
+### 2d_plots.html
+
+js files
+--------
+### 2d_plots_v2.js
+- Class Plot_2d:
+
+  - `this.get_scale()`  
+    Draw plot scale
+
+  - `this.get_domain()`  
+    Get domain of raw_data
+
+  - `this.get_axes()`  
+    Draw x-axis and y-axis
+
+  - `this.axis_items()`  
+    Create axis values and tick marks
+
+  - `this.create_svg()`  
+    Create svg element and add axis items
+
+  - `this.zm()`  
+    Zoom and pan function for data pixels
+
+  - `this.apply_zooms()`  
+    Applies listener on user scroll and calls zm() the zoom function
+
+  - `this.zoom_reset()`  
+    Resets zoom to 100% and translates back to origin
+
+  - `this.create_clipping()`  
+    Create clipping reference for zoom element
+
+  - `this.create_pixels()`  
+    Scale up the calculated pixel width so that we don't produce visual artifacts
+
+  - `this.data_block()`  
+    Input data in the pixels and create the entire block of data
+
+  - `this.create_labels()`  
+    Create text objects (x-axis, y-axis, title labels)
+
+  - `this.toggle_pan_and_zoom()`  
+    When Pan and Zoom mode is selected, call the zoom function and make sure data values are visible on mouseover
+
+  - `get_color(i, n_max)`  
+    Get color for each pixel
+
+  - `this.create_tooltip()`  
+    Tooltip obj
+
+  - `this.get_data_values(d)`  
+    Get data values on hover event
+
+  - `mouseover(d, s)`  
+    Show data values and outline when mouse enters data point
+
+  - `mousemove(d)`  
+    Follow mouse near data point
+
+  - `mouseout(d, s)`  
+    Hide data values and outline when mouse leaves data point
+
+  - `getMousePos(e)`  
+    Manually get mouse position for Chrome and Firefox
+
+### appfunctions.js
+- `$(function())` on document load:
+  - `plots[i].add_change_label(label)`  
+    Changes label (x-axis, y-axis, title) of plot object
+
+  - `plots[i].add_console_item(id)`  
+    Adds console item (zoom %)
+
+  - `plots[i].graph_modal(offset, w, h, type)`  
+    Creates modal objects
+
+  - `plots[i].create_backdrop(offset, w, h, type)`  
+    Creates backdrop (for modal)
+
+  - `plots[i].create_modal(offset, w, h, type)`  
+    Creates modal
+
+  - `plots[i].create_sidebar(offset, w, h, type)`  
+    Creates sidebar
+
+  - `plots[i].modal_actions(change_id, modal_id)`  
+    Adds functionality to buttons in modal
+
+  - `plots[i].change_label()`  
+    Changes labels (x-axis, y-axis, title labels)
+
+  - `plots[i].export_png()`  
+    Saves svg (plot and labels) as PNG file
+
+  - `plots[i].export_svg()`  
+    Saves svg (plot and labels) as SVG file
+
+- `event_handlers(self, i)`
+  - `.modal-heading span`  
+    When user clicks on a Cancel button, Close button, or the close X button in a modal, remove the backdrop and modal item
+
+  - `.modal-submit`  
+    When user clicks on a Submit button, take the appropriate action (determined by the modal_actions function) and remove the backdrop and modal item
+
+  - `.x_label_modal input, .y_label_modal input, .title_modal input`  
+    When user presses the Enter key on the keyboard to change the x-axis, y-axis, or title labels, trigger the Submit button
+
+  - `.log_scale`  
+    When user presses the Log Scale item in the Options submenu, toggle log scale
+
+  - `.pan_and_zoom`  
+    When user clicks on Pan and Zoom mode, make active Pan and Zoom mode
+
+  - `.zoom_100`  
+    When user clicks on Zoom 100%, reset plot back to 100% zoom and translate back to origin
+
+  - `.see_values`  
+    When user clicks on Select Region mode
+
+  - `.x_axis_label`  
+    When user clicks on x-Axis label in submenu, open modal,
+
+  - `.y_axis_label`  
+    When user clicks on y-Axis label in submenu, open modal,
+
+  - `.title_label`  
+    When user clicks on title labe in submenu, open modal,
+
+  - `.export_png`  
+    When user clicks on Export > PNG, export svg as png file. Uses saveSvgAsPng.js
+
+  - `.export_svg`  
+    When user clicks on Export > SVG, export svg as svg file. Uses saveSvgAsPng.js
+
+### mustachetemplates.js
+
+css files
+---------
+### 2d_plots.css
+- `.main`
+- `.menu`
+- `.axis path`, `.axis line`
+- `.axis text`, `text`, `.tooltip`
+- `.x.axis path`
+- `.grid .tick`
+- `.grid path`
+- `.extent`
+- `.pan`
+
+### appfunctions.css
+???????
+- `.sp-picker-container`
+
+Backdrop
+- `.backdrop`
+
+Modal
+- `.modal-window`
+- `.modal-heading`
+- `.modal-heading span`
+- `.modal-content`
+- `.modal-buttons`
+- `.modal-buttons a`
+
+Sccrollbar
+- `.modal-content::-webkit-scrollbar-track`, `.sidebar-content::-webkit-scrollbar-track`
+- `.modal-content::-webkit-scrollbar`, `.sidebar-content::-webkit-scrollbar`
+- `.modal-content::-webkit-scrollbar-thumb`, `.sidebar-content::-webkit-scrollbar-thumb`
+
+Other
+- `.button`
+- `.button:hover`
+- `.user-console`
+- `.console-item`
+- `.console-input`
+- `a.icon-link`
+- `.fa-align-left`, `.fa-align-center`, `.fa-align-right`
+- `.align-active`
+- `.info_table`, `.info_table th`, `.info_table td`
