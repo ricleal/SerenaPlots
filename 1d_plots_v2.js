@@ -9,9 +9,18 @@ function Plot_1d(raw_data, anchor, plot_options, name) {
   self.name = name;
   self.translate_val = [0, 0];
   self.scale_val = 1;
+
+  // CSS main has the container dimmensions
+  var elem, style;
+  elem = document.querySelector('.main');
+  style = getComputedStyle(elem);
+
   var plot_size = {
-    height: 244,
-    width: 360
+    //height: 300,//244,
+    height: parseInt(style.height)*0.7,
+    // width: 360
+    // width: window.innerWidth*0.8
+    width: parseInt(style.width)*0.8
   };
   var margin = {
     top: 30,

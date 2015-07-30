@@ -1,13 +1,13 @@
 .main{
     position: relative;
-    height: 391px;
-    width: 600px;
+    height: 500px;
+    width: 800px;
     box-shadow: 2px 0 6px -4px, -2px 0 6px -4px;
     margin-bottom: 30px;
 }
 .menu{
     height: 27px;
-    width: 590px;
+    width: 300px;
     background-color: #7fbbe5;
 }
 .options,
