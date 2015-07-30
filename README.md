@@ -159,7 +159,7 @@ js files
     Manually get mouse position for Chrome and Firefox (maybe IE???)
 
 
-### appfunctions.js
+### appfunctions_1d.js
 - `$(function())` on document load:
   - `plots[i].add_change_label(label)`  
     Changes labels (x-axis, y-axis, title) of plot object
@@ -297,7 +297,7 @@ Uses Mustache.js template library
 
 - `plots[i].data_region`, `plots[i].tplt_region`  
   Data and Template for showing table of regions (in sidebar).  
-  Initializes `plots[i].data_region.info_table` which is an array that contains a dictionary for each region X, if there are any. Other functions and event handlers in appfunctions.js and 1d_plots_v2.js will refer to this dictionary.
+  Initializes `plots[i].data_region.info_table` which is an array that contains a dictionary for each region X, if there are any. Other functions and event handlers in appfunctions_1d.js and 1d_plots_v2.js will refer to this dictionary.
   ```
   plots[i].data_region.info_table = [
     {
@@ -453,7 +453,7 @@ js files
   - `getMousePos(e)`  
     Manually get mouse position for Chrome and Firefox
 
-### appfunctions.js
+### appfunctions_2d.js
 - `$(function())` on document load:
   - `plots[i].add_change_label(label)`  
     Changes label (x-axis, y-axis, title) of plot object
@@ -537,7 +537,7 @@ css files
 - `.extent`
 - `.pan`
 
-### appfunctions.css
+### appfunctions_2d.css
 ???????
 - `.sp-picker-container`
 
