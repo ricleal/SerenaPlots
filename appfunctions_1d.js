@@ -322,8 +322,8 @@ function appfunctions(i) {
     plots[i].create_sidebar = function(offset, w, h, type) {
         this.data_objs.name = type;
         this.data_objs.top = 32;
-        this.data_objs.left = w - w / 4 - 1;
-        this.data_objs.width = w / 4;
+        this.data_objs.left = w - 159;
+        this.data_objs.width = 160;
         this.data_objs.height = h - 1;
         return Mustache.render(this.tplt_sidebar, this.data_objs);
     }

@@ -91,6 +91,9 @@
 	overflow-x:scroll;
 	overflow-y:scroll;
 	height: 274px;
+	font-family: "Sans-serif", Times, serif;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .info_table a {
@@ -181,4 +184,6 @@ a.icon-link {
 	border-spacing: 0px;
 	border-collapse: collapse;
 	margin: 0px;
+	text-align: center;
+	vertical-align: center;
 }

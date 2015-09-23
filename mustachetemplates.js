@@ -329,7 +329,7 @@ function mustachetemplates(i){
       ]
     };
     plots[i].tplt_region = "<div class='sidebar-heading'>[[heading]]</div>" +
-      "<div class='sidebar-content'><table class='info_table'>Visible regions:<thead>" +
+      "<div class='sidebar-content'><p>Visible regions:</p><table class='info_table'><thead>" +
         "<tr><th>ID</th>" +
         "<th>Active</th>" +
         "<th>Remove</th></tr>" +
