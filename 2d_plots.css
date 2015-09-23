@@ -1,13 +1,26 @@
 .main{
   position: relative;
-  height: 568px;
-  width: 550px;
+  /*height: 568px;*/
+  width: 100%;
   box-shadow: 2px 0 6px -4px, -2px 0 6px -4px;
   margin-bottom: 30px;
 }
+/*.main:before{
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+.content{
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}*/
+
 .menu{
     height: 27px;
-    width: 540px;
+    width: 100%;
     background-color: #7fbbe5;
 }
 .axis path,

@@ -9,10 +9,17 @@ function Plot_2d(anchor, raw_data, qx, qy, max_iq, plot_options) {
   self.qy = qy;
   self.max_iq = max_iq;
   self.plot_options = plot_options;
+
+  // CSS main has the container dimmensions
+  var elem, style;
+  elem = document.querySelector('.main');
+  style = getComputedStyle(elem);
+
   var plot_size = {
-    height: 500,
-    width: 500
+    height: parseInt(style.width) * 0.9,
+    width: parseInt(style.width) * 0.9
   }
+
   var margin = {
     top: 40,
     right: 40,
