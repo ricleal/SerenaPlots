@@ -20,7 +20,7 @@ function Plot_1d(raw_data, anchor, plot_options, name) {
         height: parseInt(style.height) * 0.7,
         // width: 360
         // width: window.innerWidth*0.8
-        width: parseInt(style.width) * 0.93
+        width: parseInt(style.width) - 100
     };
     var margin = {
         top: 30,
