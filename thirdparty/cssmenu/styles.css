@@ -31,14 +31,14 @@
   width: auto;
   font-family: 'Open Sans', sans-serif;
   line-height: 1;
-  background: #007833;
+  background: #7fbbe5;
 }
 #menu-line {
   position: absolute;
   top: 0;
   left: 0;
   height: 3px;
-  background: #007833;
+  background: #7fbbe5;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
@@ -79,7 +79,7 @@
 }
 .cssmenu > ul > li:hover > a,
 .cssmenu > ul > li.active > a {
-  background-color: #005424;
+  background-color: #94c6e9;
   color: #ffffff;
 }
 .cssmenu > ul > li.has-sub > a {
@@ -141,7 +141,7 @@
   padding: 10px 24px;
   width: 160px;
   font-size: 12px;
-  background: #007833;
+  background: #94c6e9;
   text-decoration: none;
   color: #ffffff;
   -webkit-transition: color .2s ease;
@@ -152,7 +152,7 @@
 }
 .cssmenu ul ul li:hover > a,
 .cssmenu ul ul li a:hover {
-  background-color: #005424;
+  background-color: #a9d1ed;
   color: #ffffff;
 }
 .cssmenu ul ul li.has-sub > a::after {
