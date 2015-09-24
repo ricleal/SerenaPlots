@@ -16,8 +16,8 @@ function Plot_2d(anchor, raw_data, qx, qy, max_iq, plot_options) {
   style = getComputedStyle(elem);
 
   var plot_size = {
-    height: parseInt(style.width) * 0.9,
-    width: parseInt(style.width) * 0.9
+    height: parseInt(style.width) ,
+    width: parseInt(style.width) 
   }
 
   var margin = {
