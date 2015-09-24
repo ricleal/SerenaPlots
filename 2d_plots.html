@@ -9,18 +9,18 @@
 	<link rel="stylesheet" type="text/css" href="cssmenu/styles.css" />
 	<link rel="stylesheet" type="text/css" href="2d_plots.css" />
 	<!-- test for monitor.sns.gov -->
-    <style>
-    body {
-        margin: 0 auto;
-        padding: 10px 10px 10px 10px;
-        text-align:left;
-        font-family: "Lucida Grande", Verdana, Arial, sans-serif;
-        font-size:12px;
-        max-width:600px;
-        min-width:600px;
-        color:#555555;
-    }
-    </style>
+	<style>
+		body {
+			margin: 0 auto;
+			padding: 10px 10px 10px 10px;
+			text-align: left;
+			font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+			font-size: 12px;
+			max-width: 600px;
+			min-width: 600px;
+			color: #555555;
+		}
+	</style>
 	<script language="javascript" type="text/javascript" src="d3.v3/d3.v3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="jquery-1.11.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="mustache.js-master/mustache.min.js"></script>
@@ -33,7 +33,6 @@
 		var qx = [parseFloat(-1.0)];
 		var qy = [parseFloat(-1.0)];
 		var raw_data = [];
-		var max_iq = dim * parseFloat(10);
 		var plot_options = {
 			log_scale: true,
 			x_label: "|Q|[1/\u00C5]",
@@ -49,15 +48,26 @@
 			qx.push(qx[i] + step);
 			qy.push(qy[i] + step);
 		}
+		//
+		//
+		// for (var i = 0; i < qx.length; i++) {
+		// 	raw_data.push([]);
+		// 	for (var j = 0; j < qy.length; j++) {
+		// 		raw_data[i].push([]);
+		// 		raw_data[i][j] = Math.random() * (qx.length - i) * parseFloat(10);
+		// 	}
+		// }
 
-
-		for (var i = 0; i < qx.length; i++) {
-			raw_data.push([]);
-			for (var j = 0; j < qy.length; j++) {
-				raw_data[i].push([]);
-				raw_data[i][j] = Math.random() * (qx.length - i) * parseFloat(10);
+		var raw_data = new Array(dim);
+		for (var i = 0; i < dim; i++) {
+			raw_data[i] = new Array(dim);
+			for (var j = 0; j < dim; j++) {
+				var r = Math.sqrt( Math.pow(qx[i],2) + Math.pow(qy[j],2) );
+				raw_data[i][j] = r;
 			}
 		}
+
+		var max_iq = Math.sqrt( Math.pow(1,2) + Math.pow(1,2) );
 
 		$(function() {
 			var plot = new Plot_2d(anchor, raw_data, qx, qy, max_iq, plot_options);
