@@ -361,7 +361,6 @@ function Plot_1d(raw_data, anchor, plot_options, name) {
                     break;
                 }
             }
-
             self.data_region.info_table[this_index].left = formatter(self.d0);
             self.data_region.info_table[this_index].right = formatter(self.d1);
             self.data_region.info_table[this_index].left_idx = l_idx;
@@ -370,7 +369,6 @@ function Plot_1d(raw_data, anchor, plot_options, name) {
             self.d0 = null;
             self.d1 = null;
         }
-
         d3.select("." + self.anchor + " .default_1d")
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
